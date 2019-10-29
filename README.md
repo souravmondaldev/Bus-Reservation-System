@@ -12,6 +12,7 @@ g++ [filename.cpp]
 ./a.out # unix
 a.exe # windows
 ```
+<img height="500" src="Screenshot from 2019-09-16 21-52-39.png" alt="BusReservationSM"/>
 
 ## Usage
 
