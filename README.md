@@ -1,4 +1,13 @@
-# Bus-Reservation-System
+<h1 align="center">Bus-Reservation-System</h1>
+
+<p align="center">
+<img style="padding:10px;" src="https://img.shields.io/badge/Open%20Source-💕%20-9cf?style=for-the-badge"><br>
+<img style="padding:10px;" src="https://img.shields.io/github/contributors/ask2sm/Bus-Reservation-System?style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/forks/ask2sm/Bus-Reservation-System?label=Forks&style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/stars/ask2sm/Bus-Reservation-System?style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/languages/count/ask2sm/Bus-Reservation-System?style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/license/ask2sm/Bus-Reservation-System?style=flat-square">
+
 
 This is a simple Bus Reservation System programmed using C++ .This program allows you to add bus details,then you can reserve a bus seat according to vacant seat available.One can check for list for vacant seats in a bus.It also allows you to see the available bus for now.
 This is a simple implementation of c++ code using class and structure. 
@@ -12,7 +21,7 @@ g++ [filename.cpp]
 ./a.out # unix
 a.exe # windows
 ```
-<img height="500" src="sm.png" alt="BusReservationSM"/>
+<img align="center" height="500" src="sm.png" alt="BusReservationSM"/>
 
 ## Usage
 
@@ -32,7 +41,8 @@ a.exe # windows
   void position(int i); #to get the all reserved bus seats
 ```
 ## Cons
-```file system``` not added. A file system can make this block of code more reusable and complete.
+```file handling``` not added. A file system can make this block of code more reusable and complete. Any PR for ```file handling``` 
+solution is appriciated 😊.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
