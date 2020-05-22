@@ -2,11 +2,11 @@
 
 <p align="center">
 <img style="padding:10px;" src="https://img.shields.io/badge/Open%20Source-💕%20-9cf?style=for-the-badge"><br>
-<img style="padding:10px;" src="https://img.shields.io/github/contributors/ask2sm/Bus-Reservation-System?style=flat-square">
-<img style="padding:10px;" src="https://img.shields.io/github/forks/ask2sm/Bus-Reservation-System?label=Forks&style=flat-square">
-<img style="padding:10px;" src="https://img.shields.io/github/stars/ask2sm/Bus-Reservation-System?style=flat-square">
-<img style="padding:10px;" src="https://img.shields.io/github/languages/count/ask2sm/Bus-Reservation-System?style=flat-square">
-<img style="padding:10px;" src="https://img.shields.io/github/license/ask2sm/Bus-Reservation-System?style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/contributors/souravmondaldev/Bus-Reservation-System?style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/forks/souravmondaldev/Bus-Reservation-System?label=Forks&style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/stars/souravmondaldev/Bus-Reservation-System?style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/languages/count/souravmondaldev/Bus-Reservation-System?style=flat-square">
+<img style="padding:10px;" src="https://img.shields.io/github/license/souravmondaldev/Bus-Reservation-System?style=flat-square">
 
 
 This is a simple Bus Reservation System programmed using C++ .This program allows you to add bus details,then you can reserve a bus seat according to vacant seat available.One can check for list for vacant seats in a bus.It also allows you to see the available bus for now.
@@ -50,4 +50,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Credits
-[SouravMondal](https://github.com/ask2sm)
+[SouravMondal](https://github.com/souravmondaldev)
