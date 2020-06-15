@@ -1,4 +1,4 @@
-<h1 align="center">Bus-Reservation-System</h1>
+<h1 align="center">Bus Reservation System</h1>
 
 <p align="center">
 <img style="padding:10px;" src="https://img.shields.io/badge/Open%20Source-💕%20-9cf?style=for-the-badge"><br>
