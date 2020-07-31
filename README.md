@@ -28,7 +28,7 @@ a.exe # windows
 ```CPP
 
 
-  void addnewbus() # used to add a new bus details
+  void addnewbus() # Used to add a new bus details
 
   void allotment(); #used to allot a set to an passenger
 
