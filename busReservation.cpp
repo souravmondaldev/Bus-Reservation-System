@@ -27,7 +27,7 @@ public:
 
 }
 
-bus[10];
+bus[25];
 
 void vline(char ch)
 
