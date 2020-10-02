@@ -13,7 +13,7 @@ class a
 
 public:
 
-  void addnewbus();
+  void addNewBus();
 
   void allotment();
 
@@ -39,7 +39,7 @@ void vline(char ch)
 
 }
 
-void a::addnewbus()
+void a::addNewBus()
 
 {
 
@@ -356,7 +356,7 @@ while(1)
 
   <<"2.Reserve your seats:\n\t\t\t"
 
-  <<"3.Show the bus seats Available:\n\t\t\t"
+  <<"3.Show the available seats:\n\t\t\t"
 
   <<"4.Buses Available Now: \n\t\t\t"
 
@@ -370,7 +370,7 @@ while(1)
 
   {
 
-    case 1:  bus[p].addnewbus();
+    case 1:  bus[p].addNewBus();
 
       break;
 
@@ -387,7 +387,7 @@ while(1)
       break;
 
     case 5:  {
-      cout<<"Successfully Logout from Application.Visit Again!"<<endl<<"<Thanks You>"<<endl<<"Created By Sourav Mondal"<<endl;
+      cout<<"Successfully Logged out from the Application. Visit Again!"<<endl<<"<Thanks You :)>"<<endl<<"Created By Sourav Mondal"<<endl;
       exit(0);
     };
 
