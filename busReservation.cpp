@@ -1,46 +1,53 @@
-
+// Simple Bus Reservation System in C++
 #include<bits/stdc++.h>
-
 using namespace std;
 
-int p = 0;
+/* p variable keeps track of number of bus available at the moment.
+If we have added 5 buses then p will be 5. Used as index of bus array. Intially no bus in the system, so p=0
+*/
+int p = 0;   
 
+/* Here each of the bus is class type. we are using a array of class named `bus` where the size 25
+means we can maximum add 25 buses. Each bus to be manually added. We used class because using class we 
+can easily use different method in bus and easily modify then plus retain OOPs property.
+*/
 class a
-
 {
-
-  char busn[5], driver[10], arrival[5], depart[5], from[10], to[10], seat[8][4][10];
+  //Note: Don't use space in input.
+  //busPlateNum can store a input upto length 7 and so on for other attributes.
+  //Here seatNumber is number of seats in a bus, seatNumber is matrix type char, means seatNumber[8][4] have 4 columns and 8 rows,
+  //meaning 8*4=32 seats in total, while seatNumber[8][4][10] means each of the seatNumber can store a nameOfPassenger with 10 character each
+  char busn[5], driver[10], arrival[10], depart[10], from[10], to[10], seat[8][4][10];
 
 public:
 
-  void addNewBus();
+  void addNewBus(); // Adds a New Bus with its details
 
-  void allotment();
+  void allotmentOfSeatToPassenger(); // Used to allot seatNumber to passenger from availbale buses
 
-  void empty();
+  void empty();     // Used to intilialize all bus seats as vacent
 
-  void show();
+  void showAvailableBusSeats();      //shows avialble bus seats from a bus
 
-  void avail();
+  void showAvailableBuses();     //shows all avialable buses
 
-  void position(int i);
+  void showReservedBusSeats(int i); //to get the all reserved bus seats from a bus
 
 }
+bus[25]; // Bus is array of class with max size 25 of buses.
 
-bus[25];
-
+/* Dummy function used to add lines of `*` to separate and clean output*/
 void vline(char ch)
-
 {
 
-  for (int i=75;i>0;i--)
-
-  cout<<ch;
+  for (int i=75;i>0;i--){
+    cout<<ch;
+  }
+  cout<<endl;
 
 }
 
 void a::addNewBus()
-
 {
 
   cout<<"Enter bus no: ";
@@ -67,19 +74,20 @@ void a::addNewBus()
 
   cin>>bus[p].to;
 
-  bus[p].empty();
+  bus[p].empty(); // Fill all the seats with 'empty'
 
-  p++;
+  p++; //Number of buses(index of array bus) increase
 
 }
 
-void a::allotment()
+//Used to allocate seat in bus
+void a::allotmentOfSeatToPassenger()
 
 {
 
-  int seat;
+  int seat;  // Enter seat number between 1 to 32
 
-  char number[5];
+  char number[5]; //Bus number in which you want to reserve seat
 
   top:
 
@@ -93,7 +101,7 @@ void a::allotment()
 
   {
 
-    if(strcmp(bus[n].busn, number)==0)
+    if(strcmp(bus[n].busn, number)==0) //Check if bus number exist or not, if exist n will be the index of array bus
 
     break;
 
@@ -107,8 +115,7 @@ void a::allotment()
 
     cin>>seat;
 
-    if(seat>32)
-
+    if(seat>32) //Can't allocate as there are only 32 seats
     {
 
       cout<<"\nThere are only 32 seats available in this bus.";
@@ -119,7 +126,7 @@ void a::allotment()
 
     {
 
-    if (strcmp(bus[n].seat[seat/4][(seat%4)-1], "Empty")==0)
+    if (strcmp(bus[n].seat[seat/4][(seat%4)-1], "Empty")==0) // used to break the seat number in row-column basis, If empty then allocate passenger
 
       {
 
@@ -151,7 +158,7 @@ void a::allotment()
 
   }
 
-
+//Makes all the seats empty
 void a::empty()
 
 {
@@ -172,7 +179,9 @@ void a::empty()
 
 }
 
-void a::show()
+
+// Allows to check vacent seats in a bus
+void a::showAvailableBusSeats()
 
 {
 
@@ -184,11 +193,12 @@ void a::show()
 
   cin>>number;
 
+//Finds the bus number matched with input bus number
   for(n=0;n<=p;n++)
 
   {
 
-    if(strcmp(bus[n].busn, number)==0)
+    if(strcmp(bus[n].busn, number)==0) // if matched the n will be the index of bus
 
     break;
 
@@ -198,9 +208,8 @@ while(n<=p)
 
 {
 
-  vline('*');
-
-  cout<<"Bus no: \t"<<bus[n].busn
+  vline('*'); // Prints a line with '*'
+  cout<<"\nBus no: \t"<<bus[n].busn
 
   <<"\nDriver: \t"<<bus[n].driver<<"\t\tArrival time: \t"
 
@@ -212,7 +221,7 @@ while(n<=p)
 
   vline('*');
 
-  bus[0].position(n);
+  bus[0].showReservedBusSeats(n); //Checks for reserved seats in the current bus( nth bus)
 
   int a=1;
 
@@ -244,11 +253,11 @@ while(n<=p)
 
 }
 
-void a::position(int l)
-
+//Helps create a table output with seats empty and reserved seats with passenger name
+void a::showReservedBusSeats(int l)
 {
 
-  int s=0;p=0;
+  int s=0,h=0;
 
   for (int i =0; i<8;i++)
 
@@ -278,7 +287,7 @@ void a::position(int l)
 
           cout<<bus[l].seat[i][j];
 
-          p++;
+          h++;
 
         }
 
@@ -304,14 +313,14 @@ void a::position(int l)
 
     }
 
-  cout<<"\n\nThere are "<<p<<" seats empty in Bus No: "<<bus[l].busn;
+  cout<<"\n\nThere are "<<h<<" seats empty in Bus No: "<<bus[l].busn;
 
   }
 
-void a::avail()
+//Print all the buses added in the system
+void a::showAvailableBuses()
 
 {
-
 
   for(int n=0;n<p;n++)
 
@@ -335,38 +344,43 @@ void a::avail()
 
 }
 
+//Main function
 int main()
 
 {
 
 //system("cls");
-
-int w;
- cout<<"\t\t\t\t**************SM Travel Agency****************"<<endl<<endl;
-while(1)
-
-{
+  //Choice will be users input to use different functionality over system using switch 
+  int choice;
+  vline('-');
+  cout<<"\t\t\t\t****SM Bus Travel Agency****"<<endl<<endl;
+  vline('-');
+  while(1)
+  {
  
 
     //system("cls");
-
-  cout<<"\n\n\n\n\n";
+  cout<<endl;
+  vline('*');
+  cout<<"\n\n";
 
   cout<<"\t\t\t1.Add new Bus Details:\n\t\t\t"
 
   <<"2.Reserve your seats:\n\t\t\t"
 
-  <<"3.Show the available seats:\n\t\t\t"
+  <<"3.Show the available seats in a bus:\n\t\t\t"
 
   <<"4.Buses Available Now: \n\t\t\t"
 
   <<"5.Exit";
-
+  cout<<endl;
+  vline('*');
   cout<<"\n\t\t\tEnter your choice:-> ";
 
-  cin>>w;
+  cin>>choice;
+  vline('*');
 
-  switch(w)
+  switch(choice)
 
   {
 
@@ -374,15 +388,15 @@ while(1)
 
       break;
 
-    case 2:  bus[p].allotment();
+    case 2:  bus[p].allotmentOfSeatToPassenger();
 
       break;
 
-    case 3:  bus[0].show();
+    case 3:  bus[0].showAvailableBusSeats();
 
       break;
 
-    case 4:  bus[0].avail();
+    case 4:  bus[0].showAvailableBuses();
 
       break;
 
