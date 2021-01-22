@@ -34,7 +34,7 @@ public:
   void showReservedBusSeats(int i); //to get the all reserved bus seats from a bus
 
 }
-bus[25]; // Bus is array of class with max size 25 of buses.
+bus[25]; // Bus is aa rray of class with max size of 25 buses.
 
 /* Dummy function used to add lines of `*` to separate and clean output*/
 void vline(char ch)
